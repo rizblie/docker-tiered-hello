@@ -27,7 +27,26 @@ Access to a docker registry
 
 ## Runtime options
 
-### Example
+hello-backend
+```
+Options:
+  -V, --version              output the version number
+  -p, --port <port>          server port (default: "80")
+  -g, --greeting <greeting>  greeting (default: "Hello")
+  -m, --message <message>    message (default: "Welcome to our world!")
+  -h, --help                 output usage information
+```
+
+hello-web
+```
+Options:
+  -V, --version        output the version number
+  -b, --backend <uri>  uri of backend service
+  -p, --port <port>    server port (default: "80")
+  -h, --help           output usage information
+```
+
+## Example usage
 
 ```
 docker run --name backend -d hello-backend
@@ -37,8 +56,6 @@ docker run --name web -p 8080:80 hello-web node server.js --backend http://${bac
 
 cleanup
 ```
-docker kill web
-docker kill backend
-docker rm web
-docker rm backend
+docker kill web backend
+docker rm web backend
 ```
