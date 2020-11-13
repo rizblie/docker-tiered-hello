@@ -26,3 +26,19 @@ Access to a docker registry
 
 
 ## Runtime options
+
+### Example
+
+```
+docker run --name backend -d hello-backend
+backend=$(docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' backend)
+docker run --name web -p 8080:80 hello-web node server.js --backend http://${backend}/data
+```
+
+cleanup
+```
+docker kill web
+docker kill backend
+docker rm web
+docker rm backend
+```

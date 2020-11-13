@@ -1,0 +1,15 @@
+{
+    "name": "hello-backend",
+    "version": "1.0.0",
+    "description": "Hello backend server.",
+    "author": "Mike Rizzo <rizblie@gmail.com>",
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js"
+    },
+    "dependencies": {
+      "body-parser": "^1.19.0",
+      "express": "^4.17.1",
+      "commander": "^4.1.0"
+    }
+  }
